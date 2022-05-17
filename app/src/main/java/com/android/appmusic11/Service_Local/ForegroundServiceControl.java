@@ -72,7 +72,6 @@ public class ForegroundServiceControl extends Service {
             } else if (intent.hasExtra("obj_song_yeuthich")) {
                 clearArray();
                 mangbaihatyeuthich = intent.getParcelableArrayListExtra("obj_song_yeuthich");
-                Log.d("ManhCuong", "Bài hát yêu thích" + mangbaihatyeuthich.size());
 
             }
         }
@@ -133,6 +132,7 @@ public class ForegroundServiceControl extends Service {
                 } else if (mangbaihatyeuthich != null && mangbaihatyeuthich.size() > 0) {
                     previousMusic(mangbaihatyeuthich.size());
                 }
+                Log.d("ManhCuong","positionPlayer: "+positionPlayer);
                 CompleteAndStart();
                 break;
             case ACTION_DURATION:
@@ -202,7 +202,6 @@ public class ForegroundServiceControl extends Service {
 
     private void CompleteAndStart() {
         if (mangbaihat != null && mangbaihat.size() > 0) {
-            Log.d("ManhCuong", "PosittionPlayer" + mangbaihat.get(positionPlayer).getLinkBaiHat());
             startMusic(mangbaihat.get(positionPlayer).getLinkBaiHat());
             urlImage = mangbaihat.get(positionPlayer).getHinhBaiHat();
             sendNotificationMedia(mangbaihat.get(positionPlayer).getTenBaiHat(), mangbaihat.get(positionPlayer).getTenCaSi());
@@ -211,7 +210,7 @@ public class ForegroundServiceControl extends Service {
             urlImage = mangbaihetthuvienplaylist.get(positionPlayer).getHinhBaiHat();
             sendNotificationMedia(mangbaihetthuvienplaylist.get(positionPlayer).getTenBaiHat(), mangbaihetthuvienplaylist.get(positionPlayer).getTenCaSi());
         } else if (mangbaihatyeuthich != null && mangbaihatyeuthich.size() > 0) {
-            Log.d("ManhCuong","Link bai hat:"+mangbaihatyeuthich.get(positionPlayer).getLinkBaiNhac());
+            Log.d("ManhCuong","positionPlayer1: "+positionPlayer);
             startMusic(mangbaihatyeuthich.get(positionPlayer).getLinkBaiNhac());
             urlImage = mangbaihatyeuthich.get(positionPlayer).getHinhBaiHat();
             sendNotificationMedia(mangbaihatyeuthich.get(positionPlayer).getTenBaiHat(), mangbaihatyeuthich.get(positionPlayer).getTenCaSi());

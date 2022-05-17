@@ -260,6 +260,7 @@ public class PlayNhacActivity extends AppCompatActivity {
         Intent intent = getIntent();
         mangbaihat.clear();
         mangbaihetthuvienplaylist.clear();
+        mangbaihatyeuthich.clear();
         if (intent != null){
             if (intent.hasExtra("cakhuc")){
                 BaiHatModel baiHat = intent.getParcelableExtra("cakhuc");
@@ -278,6 +279,7 @@ public class PlayNhacActivity extends AppCompatActivity {
             else if (intent.hasExtra(("cakhucyeuthich"))){
                 BaiHatYeuThichModel baiHatYeuThichModel = intent.getParcelableExtra("cakhucyeuthich");
                 mangbaihatyeuthich.add(baiHatYeuThichModel);
+                Log.d("ManhCuong","MangBaiHatYeuThich"+mangbaihatyeuthich.size());
             }
         }
     }
