@@ -8,7 +8,7 @@
     android:id="@+id/mContainer"
     android:background="@drawable/bgr_playnhac"
     android:orientation="vertical"
-    tools:context=".Activity.PlayNhacActivity">
+    tools:context="com.project.appmusic11.Activity.PlayNhacActivity">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarplaynhac"
         android:layout_width="match_parent"

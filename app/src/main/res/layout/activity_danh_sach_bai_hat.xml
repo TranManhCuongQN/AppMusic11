@@ -8,7 +8,7 @@
     android:background="#001417"
     android:fitsSystemWindows="true"
     app:layout_collapseMode="pin"
-    tools:context=".Activity.DanhSachBaiHatActivity">
+    tools:context="com.project.appmusic11.Activity.DanhSachBaiHatActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbardanhsachbaihat"
